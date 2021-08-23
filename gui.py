@@ -27,7 +27,7 @@ from PyQt5.QtWidgets import (QFileDialog, QHBoxLayout, QMainWindow, QMessageBox,
 import re
 from config import WINDOW
 from custom_widgets import Action, Button, Label
-from converter import Converter, Ppt_Config
+from converter import Converter
 
 class UI(QMainWindow):
     """The main window object for the Graphical User Interface.
@@ -153,13 +153,13 @@ class UI(QMainWindow):
         
 
 
-    def warning(self, error):
+    def warning(self):
         """Generates a pop-up warning that the conversion failed.
 
         Triggered by an incoming signal from the secondary thread.
         """
         title = "Conversion error"
-        message = f"Unable to convert file. Error:{error}"
+        message = f"Unable to convert file."
         warning = QMessageBox.warning(
             None,
             title,
